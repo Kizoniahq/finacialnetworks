@@ -3,12 +3,43 @@
   <head>
     <title>Finacialnetworks</title>
     <%= csrf_meta_tags %>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description"  content="Best Finacial Binary Options Trade Market"/>
+    <meta name="keywords" content="Binary Options, Bitcoin trade, Best Cashback Investment Program">
+    <meta name="MobileOptimized" content="320">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
   </head>
 
-  <body>
+  <body class="trd-home-template trd-homepage-five">
+    <%= render "shared/header" %>
+    <% if notice %>
+    <div class="container">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="alert alert-success fade in">
+          <a href="#" class="close" data-dismiss="alert">&times;</a>
+          <p><%= notice %> </p>
+        </div>
+      </div>
+    </div>
+    <% elsif alert %>
+    <div class="container">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="alert alert-danger fade in">
+          <a href="#" class="close" data-dismiss="alert">&times;</a>
+          <p><%= alert %></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+
     <%= yield %>
+    <%= render "shared/footer" %>
+
   </body>
 </html>
